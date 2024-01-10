@@ -10,5 +10,5 @@ load_src varchar(20)
 )
 order by load_dt
 SEGMENTED BY hk_l_user_group_activity all nodes
-PARTITION BY load_dt::date
-GROUP BY calendar_hierarchy_day(load_dt::date, 3, 2);
+PARTITION BY event_dt::date
+GROUP BY calendar_hierarchy_day(event_dt::date, 3, 2);
